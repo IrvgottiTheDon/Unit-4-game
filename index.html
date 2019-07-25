@@ -2,40 +2,100 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="assets/css/reset.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-    </head>
-    <body>
-        <!--[if lt IE 7]>
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <h1>CrystalCollectors!</h1>
-        <div>
-            <p>Instructions go here</p>
-        </div>
-        
-        <div>
-            <div> Random Number Generated</div>
-            <div> Win Losses</div>
+    <h1>CrystalCollectors!</h1>
+    <div class="instructions">
+        <p>
+            There will be four crystals displayed as buttons on the page.<br>
+            The player will be shown a random number at the start of the game.<br>
+            <br>
+            When the player clicks on a crystal, it will add a specific amount of points to the player's total score.
+            <br>
+            <br>
+            Your game will hide this amount until the player clicks a crystal.<br>
+            When they do click one, update the player's score counter.<br>
+            <br>
+            The player wins if their total score matches the random number from the beginning of the game.<br>
+            The player loses if their score goes above the random number.<br>
+            <br>
+            The game restarts whenever the player wins or loses.
+        </p>
+    </div>
 
+    <div>
+        <div class="inline-block randomNumberBox">
+            <p id="randomNumber">-</p>
         </div>
-        
-        <div>
-            Crystal Images (4)
+
+        <div class="inline-block winLoseBox">
+            <p>Wins <span id="wins">0</span></p>
+            <p>Losses <span id="losses">0</span></p>
         </div>
-        
-        <div>Total Score</div>
-        
-        <div> Total_Score</div>
-        
-        <script src="assets/javascript/game.js" async defer></script>
-    </body>
+
+    </div>
+
+    <div>
+        <ul>
+            <li>
+                <div class="imgWrapper">
+                    <button onclick="playerClicksCrystal(0)">
+                        <img src="assets/images/PurpleDiamnd.png">
+                    </button>
+                </div>
+            </li>
+            <li>
+                <div class="imgWrapper">
+                    <button onclick="playerClicksCrystal(1)">
+                        <img src="assets/images/Red Diamond.jpeg">
+                    </button>
+                </div>
+            </li>
+            <li>
+                <div class="imgWrapper">
+                    <button onclick="playerClicksCrystal(2)">
+                        <img src="assets/images/YellowDiamond.jpg">
+                    </button>
+                </div>
+            </li>
+            <li>
+                <div class="imgWrapper">
+                    <button onclick="playerClicksCrystal(3)">
+                        <img src="assets/images/diamond white.jpeg">
+                    </button>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+
+    <div>You Total Score Is:</div>
+    <div id="totalScore"> 0</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="assets/javascript/game.js"></script>
+    <script>
+        $(document).ready(function () {
+            startNewGame();
+        });
+    </script>
+</body>
+
 </html>
