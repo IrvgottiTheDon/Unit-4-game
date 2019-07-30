@@ -7,17 +7,17 @@ var diamondArray = [0, 0, 0, 0];
 
 // Updates the HTML
 function updateHTML() {
-    // Using JavaScript
-    // document.getElementById("wins").innerHTML = numOfWins;
-    // document.getElementById("losses").innerHTML = numOfLoses;
-    // document.getElementById("totalScore").innerHTML = totalScore;
-    // document.getElementById("randomNumber").innerHTML = randomNumber;
+     // Using JavaScript
+     document.getElementById("wins").innerHTML = numOfWins;
+     document.getElementById("losses").innerHTML = numOfLoses;
+     document.getElementById("totalScore").innerHTML = totalScore;
+     document.getElementById("randomNumber").innerHTML = randomNumber;
 
     // Using JQuery
-    $("#wins").text(numOfWins);
-    $("#losses").text(numOfLoses);
-    $("#totalScore").text(totalScore);
-    $("#randomNumber").text(randomNumber);
+   // $("#wins").text(numOfWins);
+   // $("#losses").text(numOfLoses);
+   // $("#totalScore").text(totalScore);
+   // $("#randomNumber").text(randomNumber);
 }
 
 // Generates a random number at the start of the game
